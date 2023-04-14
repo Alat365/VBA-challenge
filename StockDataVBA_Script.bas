@@ -26,7 +26,7 @@ For Each ws In Worksheets
 
 'Last Row Variable
 LastRow = ws.Cells(Rows.Count, 1).End(xlUp).Row
-LastRow2 = ws.Cells(Rows.Count, 9).End(xlUp).Row
+
 
 'Adding Column Titles
     ws.Range("I1") = "Ticker"
@@ -77,7 +77,8 @@ LastRow2 = ws.Cells(Rows.Count, 9).End(xlUp).Row
     Next i
 
 'Data Analysis
-
+LastRow2 = ws.Cells(Rows.Count, 9).End(xlUp).Row
+    
     For i = 2 To LastRow2
         
         If ws.Cells(i, 12) > Max_Volume Then
@@ -117,6 +118,7 @@ LastRow2 = ws.Cells(Rows.Count, 9).End(xlUp).Row
 'Formatting
     ws.Range("K:K").NumberFormat = "0.00%"
     ws.Range("Q2:Q3").NumberFormat = "0.00%"
+    ws.Range("Q4").NumberFormat = "0"
     ws.Range("I:L").Columns.AutoFit
     ws.Range("O:Q").Columns.AutoFit
     
